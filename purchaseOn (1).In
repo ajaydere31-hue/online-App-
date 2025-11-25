@@ -1,0 +1,328 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "bef4e4e2-cecf-464b-bde4-d481be3d03f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Welcome to purchaseOn.In\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"Welcome to purchaseOn.In\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "927de2de-f79e-4682-b5fe-cc56fbf78b34",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "user_db = {\n",
+    "    \"user1\": \"pass1\",\n",
+    "    \"user2\": \"pass2\"}\n",
+    "\n",
+    "admin_db = {\"admin1\": \"admin123\",\n",
+    "           }"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "9424dba2-6638-4ce4-ad5b-174617af06b3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def user_login():\n",
+    "    username = input(\"Enter username:\")\n",
+    "    password = input(\"Enter password\")\n",
+    "    \n",
+    "    if username in user_db and user_db[username] == password:\n",
+    "        print(\"login is successeful as user\")\n",
+    "        return username\n",
+    "    else:\n",
+    "        print(\"login failed\")\n",
+    "        return none\n",
+    "    \n",
+    "\n",
+    "    \n",
+    "   \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "a7b096d2-4661-4ccb-8d38-e229c19cc199",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def admin_login():\n",
+    "    username = input(\"Enter admin username\")\n",
+    "    password = input(\"Enter admin password\")\n",
+    "\n",
+    "    if username in admin_ and admin_db[username] == password:\n",
+    "        print(\"login is successful as admin\")\n",
+    "        return username\n",
+    "    else:\n",
+    "        print(\"login failed\")\n",
+    "        return None"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "ffb7d21d-41c5-4331-8951-65e80b61c3b5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def generator_session_id():\n",
+    "    return \"1234\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "979532bc-565d-4107-9877-b0f0e0ff3362",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def login():\n",
+    "    choice = input (\"login as (user/admin):\").lower()\n",
+    "    if choice == \"user\":\n",
+    "        return user_login(), \"user\"\n",
+    "    elif choice == \"admin\":\n",
+    "        return admin_login(), \"admin\"\n",
+    "    else:\n",
+    "        print(\"invalid choice\")\n",
+    "        return None, None\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "d2642c6e-edb2-46b6-967b-a987d2f59f40",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "catlog = [{\"id\":1, \"name\":\"Boots\",\"category\":\"footwear\",\"price\":500},\n",
+    "         {\"id\":2, \"name\":\"Coats\",\"category\":\"Clothing\",\"price\":100},\n",
+    "         {\"id\":3, \"name\":\"Jackets\",\"category\":\"Clothhing\",\"price\":300},\n",
+    "         {\"id\":4, \"name\":\"Caps\",\"category\":\"Accessories\",\"price\":50},]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "8066c242-a040-4f2e-ab98-527afe754a01",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def displaty_catalog():\n",
+    "    print(\"product catalog:\")\n",
+    "    for item in catalog:\n",
+    "        print(f\"ID: {item['id']}, Name: {item['name']}, Category: {item['category']},price: ${item['price']}\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "2226e49a-4d0d-4d58-8993-b6e60df8f601",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "cart = []\n",
+    "\n",
+    "def display_cart():\n",
+    "    if not cart:\n",
+    "        print(\"cart is empty\")\n",
+    "    else:\n",
+    "        for item in cart:\n",
+    "            print(f\"{item['name']} - ${item['price']}\")\n",
+    "\n",
+    "def add_to_cart():\n",
+    "    display_catalog()\n",
+    "    product_id = int(input(\"enter producrt id to cart:\"))\n",
+    "    for item in catalog:\n",
+    "        if item in catalog:\n",
+    "            if item ['id'] == product_id:\n",
+    "                cart.append(item)\n",
+    "                print(f\"{item['name']} added to cart.\")\n",
+    "                return\n",
+    "            print(\"product not found in cart.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "d678a552-82bf-45f0-9302-22bca075ab35",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def checkout():\n",
+    "    if not cart :\n",
+    "        print (\"cart is empty,\")\n",
+    "        return\n",
+    "    display_cart()\n",
+    "    print(\"choose payment method:\")\n",
+    "    print(\"1. Net banking\")\n",
+    "    print(\"2. Debit card\")\n",
+    "    choice = input(\"Enter choice:\")\n",
+    "    if choice == \"1\":\n",
+    "        print(\"payment successful via net banking\")\n",
+    "    elif choice == \"2\":\n",
+    "        print(\"payment is successful via Debit card\")\n",
+    "    else:\n",
+    "        print(\"invalid payment option.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "99a0cf8f-8d69-44ac-9012-6e806b417fa1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def admin_func():\n",
+    "    while True :\n",
+    "        print(\"\\nAdmin Menu\")\n",
+    "        print(\"1. add product\")\n",
+    "        print(\"2. Modify product\")\n",
+    "        print(\"3.Remove product\")\n",
+    "        print(\"4. Add category (not implemented here)\")\n",
+    "        print(\"5.Logout\")\n",
+    "        choice = input(\"enter choice: \")\n",
+    "\n",
+    "        if choice == \"1\":\n",
+    "            name = input(\"Enter product name: \")\n",
+    "            category = input(\"Enter category: \")\n",
+    "            price = float(input(\"Enter price: \"))\n",
+    "            new_id = max([item['id'] for item in catalog]) + 1\n",
+    "            catalog.append({\"id\": new_id, \"name\": name, \"category\": category, \"price\": price})\n",
+    "            print(\"Product added.\")\n",
+    "\n",
+    "        \n",
+    "\n",
+    "        \n",
+    "        \n",
+    "\n",
+    "        elif choice == \"2\":\n",
+    "            display_catalog()\n",
+    "            product_id = int(input(\"Enter product ID to modify: \"))\n",
+    "            for item in catalog:\n",
+    "                if item['id'] == product_id:\n",
+    "                    item['name'] = input(\"Enter new name: \")\n",
+    "                    item['category'] = input(\"Enter new category: \")\n",
+    "                    item['price'] = float(input(\"Enter new price: \"))\n",
+    "                    print(\"Product updated.\")\n",
+    "                    break\n",
+    "            else:\n",
+    "                print(\"Product not found.\")\n",
+    "        \n",
+    "        elif choice == \"3\":\n",
+    "            display_catalog()\n",
+    "            product_id = int(input(\"Enter product ID to remove: \"))\n",
+    "            for item in catalog:\n",
+    "                if item['id'] == product_id:\n",
+    "                    catalog.remove(item)\n",
+    "                    print(\"Product removed.\")\n",
+    "                    break\n",
+    "            else:\n",
+    "                print(\"Product not found.\")\n",
+    "        \n",
+    "        elif choice == \"4\":\n",
+    "            print(\"Category management not implemented.\")\n",
+    "        \n",
+    "        elif choice == \"5\":\n",
+    "            print(\"Logging out.\")\n",
+    "            break\n",
+    "        \n",
+    "        else:\n",
+    "            print(\"Invalid choice.\")\n",
+    "\n",
+    "        "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "6a8c9324-6b59-4321-adff-6f6b78f85496",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def user_func():\n",
+    "    while True:\n",
+    "        print(\"\\nUser Menu\")\n",
+    "        print(\"1. View Catalog\")\n",
+    "        print(\"2. View Cart\")\n",
+    "        print(\"3. Add to Cart\")\n",
+    "        print(\"4. Delete from Cart\")\n",
+    "        print(\"5. Checkout\")\n",
+    "        print(\"6. Logout\")\n",
+    "        \n",
+    "        choice = input(\"Enter choice: \")\n",
+    "        \n",
+    "        if choice == \"1\":\n",
+    "            display_catalog()\n",
+    "        elif choice == \"2\":\n",
+    "            display_cart()\n",
+    "        elif choice == \"3\":\n",
+    "            add_to_cart()\n",
+    "        elif choice == \"4\":\n",
+    "            delete_from_cart()\n",
+    "        elif choice == \"5\":\n",
+    "            checkout()\n",
+    "        elif choice == \"6\":\n",
+    "            print(\"Logging out.\")\n",
+    "            break\n",
+    "        else:\n",
+    "            print(\"Invalid choice.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aab95f3e-04dc-4c05-b52c-5a6de5c7066a",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8dfca2c4-05bb-4cde-8316-998898e81409",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
